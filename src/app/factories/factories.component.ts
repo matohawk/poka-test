@@ -10,6 +10,8 @@ import { ViewportScroller } from '@angular/common';
   templateUrl: './factories.component.html',
   styleUrls: ['./factories.component.scss']
 })
+
+// ToDo : Create a Factory component and factories
 export class FactoriesComponent implements OnInit {
 
   public factories: Array<IFactory>;
@@ -46,7 +48,6 @@ export class FactoriesComponent implements OnInit {
   }
 
   ngAfterViewChecked(){
-    window.scrollTo(0, document.body.scrollHeight);
      this.viewportScroller.scrollToPosition([0, document.body.scrollHeight]);
   }
 }
