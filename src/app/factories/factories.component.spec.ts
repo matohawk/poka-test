@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { FactoriesComponent } from './factories.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {FactoriesComponent} from './factories.component';
 
 describe('FactoriesComponent', () => {
   let component: FactoriesComponent;
@@ -9,9 +9,9 @@ describe('FactoriesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [ FactoriesComponent ]
+      declarations: [FactoriesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,5 +22,11 @@ describe('FactoriesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('#addNextFactories() should toggle #loading', () => {
+    expect(component.loading).toBe(false, 'no loading');
+    component.addNextFactories();
+    expect(component.loading).toBe(true, 'loading');
   });
 });
