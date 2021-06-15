@@ -1,0 +1,32 @@
+:root {
+  scroll-behavior: smooth;
+
+  /*######  Breakpoints ######*/
+  --bp-tablet: 768px;
+  --bp-desktop: 1025px;
+
+  /*######  Spacing ######*/
+  --default-spacing: 20px;
+  --bigger-spacing: 27px;
+
+  /*###### Fonts ######*/
+  --default-font-size: 18px;
+  --title-font-size: 22px;
+  --subtitle-font-size: 20px;
+
+  /*######  Colors ######*/
+  --primary-color: #333a47;
+  --secondary-color: #ffffff;
+  --bg-color: #dee2e8;
+  --text-main-color: #a4aaba;
+  --text-secondary-color: #4f5b6f;
+
+  /*  Colors btn */
+  --btn-diagrent-end-color: #3f71e5;
+  --btn-border-right-color: #3f71e5;
+  --btn-diagrent-start-color: #348ae6;
+  --btn-border-left-color: #348ae6;
+
+  /* Cards */
+  --default-border-radius: 4px;
+}

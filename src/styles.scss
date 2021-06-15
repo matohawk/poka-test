@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "reset";
+@import "mixins";
+@import "utils";
+
+h1 {
+  font-size: var(--title-font-size);
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: var(--default-spacing);
+  font-size: var(--default-font-size);
+  line-height: 1.2;
+  color: var(--text-main-color);
+}

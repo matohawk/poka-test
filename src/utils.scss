@@ -1,0 +1,52 @@
+@import "variables";
+@import "variables-sass";
+@import "mixins";
+
+.u-flex-grid {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 0 calc(var(--default-spacing) * -1 );
+
+  &__item {
+    flex-shrink: 0;
+    flex-grow: 0;
+    box-sizing: border-box;
+    @include max-size-items(calc(100% - var(--default-spacing)*2));
+
+    @include for-tablet-up {
+      @include max-size-items(calc(50% - var(--default-spacing)*2));
+    };
+
+    @include for-desktop {
+        @include max-size-items(calc(20% - var(--default-spacing)*2));
+    };
+  }
+}
+
+.u-center {
+  text-align: center;
+}
+
+.u-loading-container {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--secondary-color);
+  }
+
+  &__active::before {
+    z-index: 2;
+    opacity: 0.5;
+  }
+}

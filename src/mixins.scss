@@ -1,0 +1,20 @@
+@import "variables-sass";
+
+@mixin for-tablet-up {
+  @media (min-width: $bp-tablet) { @content; }
+}
+
+@mixin for-desktop {
+  @media (min-width: $bp-desktop) { @content; }
+}
+
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin max-size-items($size) {
+  flex-basis: $size;
+  max-width: $size;
+}

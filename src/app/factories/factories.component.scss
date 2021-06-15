@@ -1,0 +1,44 @@
+@import "../../mixins";
+.factory-card {
+  border-radius: var(--default-border-radius);
+  background-color: #fafafa;
+  margin: var(--default-spacing);
+  padding: var(--default-spacing);
+  transition: all 0.2s ease-in-out;
+
+  &__name {
+    font-size: var(--subtitle-font-size);
+    @include text-overflow;
+    color: var(--text-secondary-color);
+    padding-bottom: var(--default-spacing);
+    line-height: 1;
+  }
+
+  &__address > * {
+    @include text-overflow;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(to left, var(--btn-diagrent-start-color), var(--btn-diagrent-end-color));
+  font-size: var(--default-font-size);
+  color: var(--secondary-color);
+  border-left: 1px solid var(--btn-border-left-color);
+  border-right: 1px solid var(--btn-border-right-color);
+  border-top: 0;
+  border-bottom: 0;
+  outline: 0;
+  border-radius: var(--default-border-radius);
+  padding: calc(var(--default-spacing) / 2);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: capitalize;
+
+  &:hover {
+    color: darken(#ffffff, 20%);
+  }
+
+  &__loading {
+    opacity: 0;
+  }
+}

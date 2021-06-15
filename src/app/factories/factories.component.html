@@ -1,0 +1,14 @@
+<div class="u-flex-grid factories u-loading-container" [ngClass]="loading ? 'u-loading-container__active' : ''">
+  <div *ngFor="let factory of factories" class="u-flex-grid__item factory-card">
+    <div class="factory-card__name">{{factory.name}}</div>
+    <address class="factory-card__address">
+      <div class="factory-card__division">{{factory.division}}</div>
+      <div class="factory-card__address">{{factory.address}}</div>
+      <div class="factory-card__country">{{factory.country}}</div>
+    </address>
+  </div>
+</div>
+<div class="u-center">
+<!--  ToDo : make a component-->
+  <button class="btn-primary" [ngClass]="loading ? 'btn-primary__loading' : ''" (click)="addNextFactories()" *ngIf=next i18n>Load More Results</button>
+</div>
