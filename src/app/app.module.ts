@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FactoriesComponent } from './factories/factories.component';
+import { FactoryComponent } from './factory/factory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FactoriesComponent
+    FactoriesComponent,
+    FactoryComponent
   ],
   imports: [
     BrowserModule,

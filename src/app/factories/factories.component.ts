@@ -11,7 +11,6 @@ import { ViewportScroller } from '@angular/common';
   styleUrls: ['./factories.component.scss']
 })
 
-// ToDo : Create a Factory component and factories
 export class FactoriesComponent implements OnInit {
 
   public factories: Array<IFactory>;

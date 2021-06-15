@@ -1,0 +1,21 @@
+@import "../../mixins";
+
+.factory-card {
+  border-radius: var(--default-border-radius);
+  background-color: #fafafa;
+  margin: var(--default-spacing);
+  padding: var(--default-spacing);
+  transition: all 0.2s ease-in-out;
+
+  &__name {
+    font-size: var(--subtitle-font-size);
+    @include text-overflow;
+    color: var(--text-secondary-color);
+    padding-bottom: var(--default-spacing);
+    line-height: 1;
+  }
+
+  &__address > * {
+    @include text-overflow;
+  }
+}
