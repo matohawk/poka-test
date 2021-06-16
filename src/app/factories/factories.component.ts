@@ -41,9 +41,11 @@ export class FactoriesComponent implements OnInit {
         const factoriesTemp: Array<IFactory> = factories.results;
         this.factories = this.factories.concat(factoriesTemp); // Question : Why push cause a pb of type
         this.next = factories.next;
+      }, error => {
+        console.error(error);
+      }, () => {
         this.loading = false;
-      }
-    );
+    });
   }
 
   ngAfterViewChecked(){
