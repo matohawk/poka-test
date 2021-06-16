@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { FactoriesComponent } from './factories/factories.component';
-import { FactoryComponent } from './factory/factory.component';
+import { FactoriesComponent } from './components/factories/factories.component';
+import { FactoryComponent } from './components/factory/factory.component';
 
 @NgModule({
   declarations: [

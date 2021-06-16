@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {IFactory} from '../interfaces/factory';
+import {IFactory} from '../../interfaces/factory';
 
 @Component({
   selector: 'app-factory',

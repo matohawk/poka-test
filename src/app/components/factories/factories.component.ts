@@ -1,9 +1,7 @@
 import {Component, OnInit, AfterViewChecked} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {IFactory} from '../interfaces/factory';
-import {IFactories} from "../interfaces/factories";
-import { ViewportScroller } from '@angular/common';
-
+import {IFactory} from '../../interfaces/factory';
+import {ViewportScroller} from '@angular/common';
+import {FactoriesService} from '../../services/factories.service';
 
 @Component({
   selector: 'app-factories',
@@ -16,17 +14,16 @@ export class FactoriesComponent implements OnInit {
   public factories: Array<IFactory>;
   public next: string;
   public loading: boolean;
-  private factoriesEndPoint : string = "https://sg666zbdmf.execute-api.us-east-1.amazonaws.com/dev";
 
-  constructor(private http: HttpClient, private viewportScroller: ViewportScroller) {
+  constructor(private viewportScroller: ViewportScroller, private Factories: FactoriesService) {
     this.factories = [];
     this.next = "";
     this.loading = false;
   }
 
   ngOnInit(): void {
-    this.http.get<IFactories>(this.factoriesEndPoint).subscribe(
-      ( factories ) => {
+    this.Factories.getFactories('').subscribe(
+      (factories) => {
         this.factories = factories.results;
         this.next = factories.next;
       }
@@ -36,8 +33,8 @@ export class FactoriesComponent implements OnInit {
   addNextFactories(): void {
     this.loading = true;
 
-    this.http.get<IFactories>(this.factoriesEndPoint + this.next).subscribe(
-      ( factories ) => {
+    this.Factories.getFactories(this.next).subscribe(
+      (factories) => {
         const factoriesTemp: Array<IFactory> = factories.results;
         this.factories = this.factories.concat(factoriesTemp); // Question : Why push cause a pb of type
         this.next = factories.next;
@@ -45,10 +42,10 @@ export class FactoriesComponent implements OnInit {
         console.error(error);
       }, () => {
         this.loading = false;
-    });
+      });
   }
 
-  ngAfterViewChecked(){
-     this.viewportScroller.scrollToPosition([0, document.body.scrollHeight]);
+  ngAfterViewChecked() {
+    this.viewportScroller.scrollToPosition([0, document.body.scrollHeight]);
   }
 }
